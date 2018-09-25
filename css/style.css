@@ -1,0 +1,182 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+    background-image: url(https://s15.postimg.cc/j6ifh51wr/original.gif);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: Papyrus;
+    font-weight: bold;
+    color: purple; 
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #d966b2 0%, #aa7ecd  100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: Silver;
+    font-size: 0;
+    color: #1919ff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #ff99cc;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+  
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #ff1a8c;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 0px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 10px;
+    display: inline-block;
+    margin: 0 5px 0 0;
+  
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color: orange;
+    
+}
+.moves {
+  color: purple ;
+  font-weight:bold;
+  font-family: Papyrus;
+  font-size: 20px;
+  margin: 10px;
+}
+.clock {
+  color: red ;
+  font-weight:bold;
+  font-family: Papyrus;
+  font-size: 20px;
+  
+}
+  .restart {
+   float: right;
+   cursor: pointer;
+  margin: 10px;
+  color: blue;
+}
+/*
+ * Making the Modal
+ */
+
+ .modal_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(128,128,128,.2);
+ }
+ .modal_heading {
+     justify-content: space-between;
+     align-items: center;
+     text-align: center;
+     padding: 0 1.5rem;
+}
+ .modal_body {
+     position: relative;
+     width: 300px;
+     top: 50%;
+     left: 50%;
+     background: pink;
+     transform: translate(-50%, -50%);
+ }
+ .modal_stats {
+     display: flex;
+     flex-direction: column;
+     color: purple;
+     font-family: Papyrus;
+     font-weight:bold;
+     align-items: center;
+     padding: 1rem;
+ }
+ .modal_buttons {
+     display: flex;
+     justify-content: space-around;
+     padding: 1rem;
+     color:purple;
+ }
+ .modal_button {
+     width: 60px;
+     height: 30px;
+     color: purple;
+     font-family: Papyrus;
+     font-weight:bold;
+ }
+.hide {
+    display: none;
+}
