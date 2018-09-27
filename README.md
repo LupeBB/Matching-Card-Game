@@ -11,6 +11,3 @@
 * Then try to match all cards in pairs. There is a timer to track time of player.
 
 
-
-
-Game can be played here: file:///C:/Users/Lupita/project2mg/index.html
