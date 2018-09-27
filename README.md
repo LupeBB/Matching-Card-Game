@@ -4,7 +4,7 @@
 
 * Match all cards in short time with less moves.
 
-## Instructions:
+## How to play the game:
 
 * Clicking on the cards will turn them over and display a symbol.
 * The goal is to match two cards of the same symbol at a time.
