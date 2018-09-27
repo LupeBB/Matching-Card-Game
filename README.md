@@ -2,7 +2,7 @@
 
 ## About the game:
 
-* Matching-Card game was created by Lupe Barriga. The game was designed to test the players memory in a fun, simple way.
+* Matching-Card Game was created by Lupe Barriga. The game was designed to test the players memory in a fun, simple way.
 
 ## Challenge: 
 
