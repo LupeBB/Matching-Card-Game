@@ -3,14 +3,11 @@
 
 ## How to play:
 
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2Clicking on the cards will turn them over and display a symbol.
+Clicking on the cards will turn them over and display a symbol.
 The goal is to match two cardsnof the same symbol at a time.
 Then try to match all cards in pairs. There is a timer to track time of player.
 
-
+Markup :  - - - -
 
 
 
