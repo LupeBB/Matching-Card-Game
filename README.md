@@ -1,7 +1,7 @@
 # Matching-Card-Game
 
 
-# How to play:
+## How to play:##
 
 Clicking on the cards will turn them over and display a symbol.
 The goal is to match two cardsnof the same symbol at a time.
