@@ -1,12 +1,12 @@
 //list that hold cards**
 const deck = document.querySelector('.deck');
- deck.addEventListener('click', event => {
+ deck.addEventListener('click', event => { //event listener determines event on clicking the card**
     const clickTarget = event.target;
     if (isClickValid(clickTarget)) {
         toggleCard(clickTarget);
         addToggleCard(clickTarget);
         if (clockOff) { 
-            startClock();
+            startClock();//timer/clock starts to runs on 1st click**
             clockOff = false;
  }
         if (toggledCards.length === 2) {  
@@ -16,11 +16,11 @@ const deck = document.querySelector('.deck');
     }
  }
 });
-function isClickValid(clickTarget) {
+function isClickValid(clickTarget) {//function checks for card class, a match class when a card is clicked
     return( clickTarget.classList.contains('card') && !clickTarget.classList.contains('match') && toggledCards.length < 2 && !toggledCards.includes(clickTarget)
   );
   }
-function toggleCard(card){ 
+function toggleCard(card){ //function toggles cards**opens and shows cards
   card.classList.toggle('open');
   card.classList.toggle('show');
     }
@@ -29,8 +29,7 @@ function toggleCard(card){
         toggledCards.push(clickTarget);
         console.log(toggledCards);
     }
-
- function checkForMatch() { 
+ function checkForMatch() {//function checks for matched cards, cards that were clicked on** 
     const total_pairs = 8;
     if (toggledCards[0].innerHTML === toggledCards[1].innerHTML) {
             toggledCards[0].classList.toggle('match');
@@ -52,6 +51,7 @@ function toggleCard(card){
     }
 
  // Shuffle function from http://stackoverflow.com/a/2450976
+//function provided by Udacity- it shuffles the cards, changes the order/postion in list/ array
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) { 
@@ -71,13 +71,13 @@ function shuffleDeck() {
     }
 }
 shuffleDeck();
- let moves = 0;
+ let moves = 0;//number of moves increases by 1 when a match is attamped to be made//when the second card is click for a potential match
 function addMove(){
     moves++;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
 }
-function checkScore() { 
+function checkScore() { //this fucntion will remove a star if a number of moves is made in a single game
     if ( moves === 12 || moves === 16 ) {
         hideStar();
     }
@@ -101,7 +101,7 @@ function startClock() {
         displayTime();
     }, 1000);
 }
-function displayTime() { 
+function displayTime() { //function allows timer/clock to be displayed on game 
    const clock = document.querySelector('.clock');
    clock.innerHTML = time;
     const minutes = Math.floor(time / 60);
@@ -118,22 +118,22 @@ function stopClock() {
 }
 
 //Modal function**
-function toggleModal() { 
+function toggleModal() { //function allows modal to be on and off**
   const modal = document.querySelector('.modal_background');
   modal.classList.toggle('hide');
 }
- function writeModalStats() { 
+ function writeModalStats() { //stats from the game, will display on modal**
     const timeStat = document.querySelector('.modal_time');
     const clockTime = document.querySelector('.clock').innerHTML;
     const movesStat = document.querySelector('.modal_moves');
     const starsStat = document.querySelector('.modal_stars');
     const stars = getStars(); 
-   
+//code manipulates DOM for time, moves and stars while game is palyed **
   timeStat.innerHTML = `Time = ${clockTime}`;
   movesStat.innerHTML = `Moves = ${moves}`;
   starsStat.innerHTML = `Stars = ${stars}`; 
 }
- function getStars() {
+ function getStars() {// function obtains number of current stars and the end of play
     stars = document.querySelectorAll('.stars li');
     starCount = 0;
     for (star of stars) {
@@ -144,8 +144,11 @@ function toggleModal() {
      return starCount;
 }
 //manipulation for modal**
-document.querySelector('.modal_cancel').addEventListener('click', () => {toggleModal()}); 
+//cancel button with close model
+document.querySelector('.modal_cancel').addEventListener('click', () => {toggleModal()});
+//restart/reset button will restart/reset gameboard
 document.querySelector('.restart').addEventListener('click', resetGame); 
+//replay button on modal allows you to replay game
 document.querySelector('.modal_replay').addEventListener('click', replayGame);
 
 function resetGame() { //function to reset game**
